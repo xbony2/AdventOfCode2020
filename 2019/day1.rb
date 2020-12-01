@@ -1,6 +1,5 @@
 total_fuel = 0
 
-
 File.open('day1input.txt', 'r').each do |mass|
   total_fuel += (mass.to_i / 3).floor - 2
 end
