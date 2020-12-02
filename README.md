@@ -1,4 +1,4 @@
-# AdventOfCode2020
-Solutions for the Advent of Code 2020 challenges in Ruby (or possibly another language if I feel like it)
+# Advent Of Code 2020
+This repo contains my solutions for the ongoing Advent of Code 2020 challenges. I will probably be programming them in Ruby
 
 You can learn all about the AOC [here](https://adventofcode.com).
