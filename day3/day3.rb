@@ -1,21 +1,3 @@
-trees = 0
-is_first = true
-right = 3
-
-File.open('input.txt', 'r').each do |line|
-  if is_first
-    is_first = false
-    next
-  end
-
-  trees += 1 if line[right % 31] == "#"
-
-  right += 3
-end
-
-puts "There are #{trees} trees."
-
-# Part 2
 def calc_trees_per_slope(right, down)
   trees = 0
   is_first = true
@@ -23,7 +5,6 @@ def calc_trees_per_slope(right, down)
   mov_right = right
 
   File.open('input.txt', 'r').each do |line|
-    #puts "start: #{line}" if down == 2 # debug
     if is_first
       is_first = false
       next
@@ -36,8 +17,8 @@ def calc_trees_per_slope(right, down)
 
     trees += 1 if line[mov_right % 31] == "#"
 
-    line[mov_right % 31] = "X" if down == 2 # debug
-    #puts "change: #{line}" if down == 2
+    #line[mov_right % 31] = "X" if down == 2 # debug
+    #puts line if down == 2
 
     down_itr = true
 
