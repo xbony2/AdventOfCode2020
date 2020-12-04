@@ -1,3 +1,4 @@
+# only supports down == 1 or down == 2 because I am lazy
 def calc_trees_per_slope(right, down)
   trees = 0
   is_first = true
@@ -16,9 +17,6 @@ def calc_trees_per_slope(right, down)
     end
 
     trees += 1 if line[mov_right % 31] == "#"
-
-    #line[mov_right % 31] = "X" if down == 2 # debug
-    #puts line if down == 2
 
     down_itr = true
 
