@@ -14,8 +14,6 @@ File.open('input.txt', 'r').each do |line|
     else
       col_line << c
     end
-
-    #puts "New low: #{low}, new high: #{high}"
   end
 
   col_low = 0
@@ -31,12 +29,9 @@ File.open('input.txt', 'r').each do |line|
     else # always R
       col_low += diff
     end
-
-    #puts "New low: #{col_low}, new high: #{col_high}"
   end
 
   id = 8 * low + col_low
-  #puts "Row: #{low}, col: #{col_low}, id: #{id}"
   seat_ids << id
 end
 
