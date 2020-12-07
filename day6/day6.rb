@@ -8,10 +8,6 @@ class Form
   def set_answer(question)
     @answers[question.ord - 'a'.ord] = true
   end
-
-  def to_s # For debugging
-    answers.to_s
-  end
 end
 
 groups = []
@@ -39,11 +35,9 @@ groups << current_group unless current_group.empty? # adds the last group
 total_yeses = 0
 
 groups.each do |group|
-  #puts "Testing group with #{group.length} forms"
   questions = Array.new(26, false)
 
   group.each do |form|
-    #puts form
     form.answers.each_with_index do |bool, i|
       questions[i] = true if bool
     end
@@ -60,7 +54,6 @@ puts "There were #{total_yeses} yeses (of anyone in a group saying yes)."
 total_strong_yes = 0
 
 groups.each do |group|
-  #puts "Testing group with #{group.length} forms"
   questions = Array.new(26, 0)
 
   group.each do |form|
@@ -75,3 +68,4 @@ groups.each do |group|
 end
 
 puts "There were #{total_strong_yes} yeses (of all members of a group saying yes)."
+
