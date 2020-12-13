@@ -1,0 +1,117 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3940,        107]
+NotebookOptionsPosition[      3118,         83]
+NotebookOutlinePosition[      3518,         99]
+CellTagsIndexPosition[      3475,         96]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Sample input", "Section",
+ CellChangeTimes->{{3.8168279492521424`*^9, 
+  3.816827957608486*^9}},ExpressionUUID->"21b278bd-4c32-4602-9e5f-\
+c70af5c649ea"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"ChineseRemainder", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "0", ",", " ", "1", ",", " ", "4", ",", " ", "6", ",", " ", "7"}], "}"}],
+     ",", " ", 
+    RowBox[{"{", 
+     RowBox[{
+     "7", ",", " ", "13", ",", " ", "59", ",", " ", "31", ",", " ", "19"}], 
+     "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.816827692034181*^9, 3.81682769485821*^9}, {
+   3.81682787808669*^9, 3.81682788713791*^9}, {3.8168280635028377`*^9, 
+   3.816828090107498*^9}, {3.816828226787851*^9, 3.8168282430005107`*^9}, 
+   3.816828413516895*^9, 3.816828468804329*^9, {3.8168293275823216`*^9, 
+   3.8168293605967693`*^9}, {3.816829394553981*^9, 3.8168294167859254`*^9}, {
+   3.8168294658866014`*^9, 3.816829506013646*^9}, {3.816832717629613*^9, 
+   3.8168327671367235`*^9}, {3.816832882739856*^9, 3.8168329016636977`*^9}, {
+   3.816832945546244*^9, 3.8168330026885567`*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"b4575a62-fd62-421f-8119-026b1223e7ea"],
+
+Cell[BoxData["2093560"], "Output",
+ CellChangeTimes->{
+  3.816827888664586*^9, {3.8168280675476017`*^9, 3.816828096067401*^9}, 
+   3.8168282444944444`*^9, 3.816828421011577*^9, 3.81682847106903*^9, {
+   3.8168293467824*^9, 3.8168293622853947`*^9}, {3.8168293952447724`*^9, 
+   3.8168294129152503`*^9}, {3.8168294678054523`*^9, 3.8168295082845764`*^9}, 
+   3.8168327695496464`*^9, 3.816832903276703*^9, {3.8168329502222385`*^9, 
+   3.8168329628024974`*^9}, 3.8168330040459027`*^9},
+ CellLabel->"Out[19]=",ExpressionUUID->"975f6244-98a6-4811-8095-2b88b13b82c7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ChineseRemainder", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", " ", "2", ",", " ", "3"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"17", ",", " ", "13", ",", " ", "19"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.816835097075701*^9, 3.8168351321306906`*^9}, {
+  3.816835215035378*^9, 3.8168353069214315`*^9}},
+ CellLabel->"In[27]:=",ExpressionUUID->"2bc4ce65-96bc-4ba0-931b-11e216c2b675"],
+
+Cell[BoxData["782"], "Output",
+ CellChangeTimes->{{3.8168351095357113`*^9, 3.8168351326211567`*^9}, {
+  3.816835219784173*^9, 3.8168352332245035`*^9}, {3.816835294761882*^9, 
+  3.816835307685609*^9}},
+ CellLabel->"Out[27]=",ExpressionUUID->"3138d534-3155-4026-99f3-3cc5b2b52051"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{571, 418},
+WindowMargins->{{Automatic, 23.5}, {-9, Automatic}},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 19, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"589076e6-9342-40f1-8294-5352f5c65e73"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 159, 3, 67, "Section",ExpressionUUID->"21b278bd-4c32-4602-9e5f-c70af5c649ea"],
+Cell[CellGroupData[{
+Cell[764, 29, 1009, 20, 48, "Input",ExpressionUUID->"b4575a62-fd62-421f-8119-026b1223e7ea"],
+Cell[1776, 51, 559, 8, 32, "Output",ExpressionUUID->"975f6244-98a6-4811-8095-2b88b13b82c7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2372, 64, 436, 9, 28, "Input",ExpressionUUID->"2bc4ce65-96bc-4ba0-931b-11e216c2b675"],
+Cell[2811, 75, 279, 4, 54, "Output",ExpressionUUID->"3138d534-3155-4026-99f3-3cc5b2b52051"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
