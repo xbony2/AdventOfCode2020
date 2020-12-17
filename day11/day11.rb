@@ -147,6 +147,6 @@ def pulse2(layout)
   end
 
   new_layout.size.times do |i| # TODO: definitely a better way to do this
-  layout[i] = new_layout[i]
+    layout[i] = new_layout[i]
   end
 end
