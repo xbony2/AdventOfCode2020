@@ -83,6 +83,12 @@ def parse_expr(tokens, until_token)
   elsif nxt.type == :num
     left = parse_num(tokens)
     return left if tokens.peek.type == until_token
+    # Try
+    nxt = tokens.peek
+    raise "Unexpected token #{nxt} on left!" if nxt.type != :plus && nxt.type != :times
+    new_op = tokens.deq.type
+    new_right = parse_expr(tokens, until_token)
+    return Node.new(left, new_op, new_right)
   else
     raise "Unexpected token #{nxt} on left!"
   end
@@ -107,17 +113,23 @@ def parse_expr(tokens, until_token)
     tokens.deq # remove (
     right = parse_expr(tokens, :right_prn)
     tokens.deq # remove )
-
-    if tokens.peek.type != until_token
-      # TODO: my head hurts
-    end
   elsif nxt.type == :num
-    right = parse_expr(tokens, until_token)
+    right = parse_num(tokens)
   else
     raise "Unexpected token #{nxt} on left!"
   end
 
   ret = Node.new(left, op, right)
+
+  if tokens.peek.type != until_token
+    nxt = tokens.peek
+    raise "Unexpected token #{nxt} on left!" if nxt.type != :plus && nxt.type != :times
+    new_op = tokens.deq.type
+    new_right = parse_expr(tokens, until_token)
+    ret = Node.new(ret, new_op, new_right)
+  end
+
+  ret
 end
 
 def parse_num(tokens)
