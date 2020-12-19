@@ -3,6 +3,7 @@ require 'basic_queue'
 sum = 0
 
 def interpret_line(line)
+  #calculate(parse_expr(tokenize(line), :end))
   parse_expr(tokenize(line), :end)
 end
 
@@ -48,6 +49,8 @@ end
 #   OpNode ::= :plus | :times       # Represented by @op when @type = :expr
 #   NumNode ::= :num                # Represented by @num when @type = :num
 class Node
+  attr_reader :type, :left, :op, :right, :num
+
   def initialize(left, op = nil, right = nil)
     if op == nil
       @type = :num
@@ -135,6 +138,24 @@ end
 def parse_num(tokens)
   nxt = tokens.deq # Yeah it's just one digit
   Node.new(nxt.value)
+end
+
+def calculate(node)
+  if node.type == :num
+    node.num
+  else
+    left = calculate(node.left)
+    right = calculate(node.right)
+
+    case node.op
+    when :plus
+      left + right
+    when :times
+      left * right
+    else
+      raise "Unknown operator #{node.op}!"
+    end
+  end
 end
 
 File.open('input.txt', 'r').each do |line|
