@@ -82,9 +82,9 @@ def gen_reg(rules, rule_num)
   case rule.type
   when :append
     if rule.third.nil?
-      "#{gen_reg(rules, rule.first)}#{gen_reg(rules, rule.second)}"
+      "(#{gen_reg(rules, rule.first)})(#{gen_reg(rules, rule.second)})"
     else
-      "#{gen_reg(rules, rule.first)}#{gen_reg(rules, rule.second)}#{gen_reg(rules, rule.third)}"
+      "(#{gen_reg(rules, rule.first)})(#{gen_reg(rules, rule.second)})(#{gen_reg(rules, rule.third)})"
     end
   when :or
     if rule.third.nil?
