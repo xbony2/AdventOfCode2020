@@ -1,4 +1,5 @@
 MAX_RULES = 200
+MAX_RECURSIVE_CALL = 10
 
 class Rule
   attr_reader :type
@@ -79,6 +80,23 @@ def gen_reg(rules, rule_num)
   rule = rules[rule_num]
   #puts "#{rules}" if rule.nil?
 
+  # Yep i'm doing this the disgusting hacky way
+  if rule_num == 8
+    return "((#{gen_reg(rules, 42)})+)"
+  elsif rule_num == 11
+    ret = "("
+
+    MAX_RECURSIVE_CALL.times do |t|
+      #ret += "((#{gen_reg(rules, 42) * (t + 1)})(#{gen_reg(rules, 31) * (t + 1)}))"
+      ret += "#{"(#{gen_reg(rules, 42)})" * (t + 1)}#{"(#{gen_reg(rules, 31)})" * (t + 1)}"
+      #ret += "(((#{gen_reg(rules, 42)})(#{gen_reg(rules, 31)})){#{t + 1}})"
+      ret += "|" if t != MAX_RECURSIVE_CALL - 1
+    end
+
+    ret += ")"
+    return ret
+  end
+
   case rule.type
   when :append
     if rule.third.nil?
@@ -144,8 +162,8 @@ File.open('input.txt', 'r').each do |line|
       rule_num = m[1].to_i
       char = m[2]
       rules[rule_num] = LiteralRule.new(char)
-    else
-      raise "Unknown rule!!!"
+      #else
+      #  raise "Unknown rule!!!"
     end
   else # we are in the message part of the input
     inputs << line.chomp
@@ -153,12 +171,16 @@ File.open('input.txt', 'r').each do |line|
 end
 
 expr = gen_reg(rules, 0)
+# Some simplifying
+expr.gsub!(/\(a\)/, 'a')
+expr.gsub!(/\(b\)/, 'b')
 puts expr
 
 #puts inputs
 
-# Part 1
-matches = inputs.count {|i| i.match?(/^#{expr}$/) }
+r = /^#{expr}$/
+
+matches = inputs.count {|i| i.match?(r) }
 
 puts
 puts "There are #{matches} matches"
